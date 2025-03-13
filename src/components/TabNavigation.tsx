@@ -14,7 +14,11 @@ const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, setActiveTab }
       <div className="bg-gray-100/80 p-1.5 rounded-full inline-flex">
         <button
           onClick={() => setActiveTab('info')}
-          className={`tab-button ${activeTab === 'info' ? 'active' : 'inactive'}`}
+          className={`tab-button flex items-center justify-center relative px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${
+            activeTab === 'info' 
+              ? 'active text-gray-900 z-10' 
+              : 'inactive text-gray-600 hover:text-gray-900'
+          }`}
         >
           <BookOpen className="w-4 h-4 mr-2" />
           Інформація
@@ -32,7 +36,11 @@ const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, setActiveTab }
         
         <button
           onClick={() => setActiveTab('tools')}
-          className={`tab-button ${activeTab === 'tools' ? 'active' : 'inactive'}`}
+          className={`tab-button flex items-center justify-center relative px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${
+            activeTab === 'tools' 
+              ? 'active text-gray-900 z-10' 
+              : 'inactive text-gray-600 hover:text-gray-900'
+          }`}
         >
           <Shield className="w-4 h-4 mr-2" />
           Інструменти захисту
