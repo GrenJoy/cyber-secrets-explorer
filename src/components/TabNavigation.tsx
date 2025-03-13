@@ -24,7 +24,9 @@ const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, setActiveTab }
               show={true} 
               type="scale" 
               className="absolute inset-0 -z-10 bg-white rounded-full"
-            />
+            >
+              <div></div>
+            </AnimatedTransition>
           )}
         </button>
         
@@ -40,7 +42,9 @@ const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, setActiveTab }
               show={true} 
               type="scale" 
               className="absolute inset-0 -z-10 bg-white rounded-full"
-            />
+            >
+              <div></div>
+            </AnimatedTransition>
           )}
         </button>
       </div>

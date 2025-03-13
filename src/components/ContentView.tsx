@@ -1,8 +1,8 @@
-
 import React from 'react';
 import SidebarNav from './SidebarNav';
 import { Section, InfoCard } from './Section';
 import AnimatedTransition from './AnimatedTransition';
+import { Shield } from 'lucide-react';
 
 interface ContentViewProps {
   activeTab: 'info' | 'tools';
@@ -290,7 +290,7 @@ const ContentView: React.FC<ContentViewProps> = ({
 
                     <InfoCard title="Причини підміни">
                       <p className="text-gray-600">
-                        Підробка дозволяє приховати технічні характеристики, емулювати інші пристрої, 
+                        Підробка дозволяє приховати технічні характеристики, emulateють інші пристрої, 
                         обходити обмеження або запобігати відстеженню.
                       </p>
                     </InfoCard>
@@ -333,17 +333,161 @@ const ContentView: React.FC<ContentViewProps> = ({
       <AnimatedTransition show={activeTab === 'tools'} type="fade" duration={300}>
         {activeTab === 'tools' && (
           <div className="section-card mt-8">
-            <div className="p-8 text-center">
+            <div className="p-8">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-10 h-10 text-primary" />
               </div>
-              <h2 className="text-2xl font-semibold mb-4 text-gray-900">Інструменти захисту</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-                Ця секція міститиме інтерактивні інструменти для перевірки безпеки вашого 
-                браузера, тести на вразливості та рекомендації щодо налаштувань приватності.
+              <h2 className="text-2xl font-semibold mb-4 text-center text-gray-900">Інструменти захисту</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto mb-8 text-center">
+                Тут представлені інструменти, які допоможуть вам захистити свою приватність та безпеку в інтернеті.
               </p>
-              <div className="inline-block bg-gray-100 px-4 py-3 rounded-lg text-gray-500 text-sm">
-                Розділ перебуває в розробці. Очікуйте оновлень незабаром.
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-medium mb-4">Корисні розширення для браузера</h3>
+                  <div className="space-y-4">
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h4 className="font-medium mb-1 flex items-center">
+                        <a href="https://ublockorigin.com" target="_blank" rel="noopener noreferrer" 
+                          className="text-primary hover:underline flex items-center">
+                          uBlock Origin <span className="ml-1 text-xs text-gray-500">↗</span>
+                        </a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Блокує рекламу, скрипти та трекери.
+                      </p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h4 className="font-medium mb-1 flex items-center">
+                        <a href="https://privacybadger.org" target="_blank" rel="noopener noreferrer"
+                          className="text-primary hover:underline flex items-center">
+                          Privacy Badger <span className="ml-1 text-xs text-gray-500">↗</span>
+                        </a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Аналізує активність веб-сайтів та блокує ті, що намагаються відстежувати користувача.
+                      </p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h4 className="font-medium mb-1 flex items-center">
+                        <a href="https://addons.mozilla.org/uk/firefox/addon/noscript/" target="_blank" rel="noopener noreferrer"
+                          className="text-primary hover:underline flex items-center">
+                          NoScript (Firefox) <span className="ml-1 text-xs text-gray-500">↗</span>
+                        </a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Забороняє виконання шкідливих скриптів.
+                      </p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <h4 className="font-medium mb-1 flex items-center">
+                        <a href="https://www.eff.org/https-everywhere" target="_blank" rel="noopener noreferrer"
+                          className="text-primary hover:underline flex items-center">
+                          HTTPS Everywhere <span className="ml-1 text-xs text-gray-500">↗</span>
+                        </a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Примусово використовує зашифровані HTTPS-з'єднання для захисту трафіку.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-medium mb-4">Інструменти анонімізації</h3>
+                  <div className="space-y-5">
+                    <div>
+                      <h4 className="font-medium mb-3">Мережа Tor</h4>
+                      <p className="text-gray-600 mb-3 text-sm">
+                        Tor Browser дозволяє користуватись інтернетом анонімно, маскуючи вашу локацію та захищаючи від стеження.
+                      </p>
+                      <a href="https://www.torproject.org/ru/download/" target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">
+                        Завантажити Tor Browser
+                      </a>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-medium mb-3">Надійний VPN-сервіс</h4>
+                      <p className="text-gray-600 mb-3 text-sm">
+                        NordVPN забезпечує шифрування з'єднання, захист від стеження та доступ до обмеженого контенту.
+                      </p>
+                      <a href="https://nordvpn.com/uk/offer/" target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">
+                        Перейти до NordVPN
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 className="text-xl font-medium mb-4">Підміна User-Agent</h3>
+                <p className="text-gray-600 mb-4">
+                  Підміна User-Agent допомагає приховати інформацію про вашу операційну систему та браузер. 
+                  Нижче наведено код на Python для реалізації такої функціональності:
+                </p>
+                <div className="bg-gray-800 p-5 rounded-lg overflow-x-auto">
+                  <pre className="text-green-400 text-sm leading-relaxed">
+{`from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from random import choice
+os_list = [
+"Windows NT 10.0; Win64; x64",
+"Macintosh; Intel Mac OS X 10_15_7",
+"X11; Linux x86_64",
+"Linux; Android 10; SM-G973F",
+"iPhone; CPU iPhone OS 14_0 like Mac OS X"
+]
+browser_list = [
+("Chrome", "89.0.4389.90"),
+("Firefox", "86.0"),
+("Safari", "14.0.3"),
+("Edge", "89.0.774.45"),
+("Opera", "75.0.3969.149")
+]
+
+def generate_random_user_agent():
+    os = choice(os_list)
+    browser, version = choice(browser_list)
+    if browser == "Safari":
+        return f"Mozilla/5.0 ({os}) AppleWebKit/537.36 (KHTML, like Gecko) Version/{version} Safari/537.36"
+    elif browser == "Opera":
+        return f"Mozilla/5.0 ({os}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{version} Safari/537.36 OPR/{version}"
+    return f"Mozilla/5.0 ({os}) AppleWebKit/537.36 (KHTML, like Gecko) {browser}/{version} Safari/537.36"
+options = Options()
+custom_user_agent = generate_random_user_agent()
+options.add_argument(f'user-agent={custom_user_agent}')
+options.add_argument('--disable-gpu')
+options.add_argument('--no-sandbox')
+options.add_experimental_option('excludeSwitches', ['enable-automation'])
+options.add_experimental_option('useAutomationExtension', False)
+driver = webdriver.Chrome(options=options)
+try:
+    driver.get("https://www.whatismybrowser.com/detect/what-is-my-user-agent/")
+    wait = WebDriverWait(driver, 10)
+    detected_value = wait.until(EC.presence_of_element_located((By.ID, "detected_value")))
+    displayed_user_agent = detected_value.text
+    print(f"Встановлений User-Agent: {custom_user_agent}")
+    print(f"Визначений User-Agent: {displayed_user_agent}")
+    print("User-Agent успішно змінено!" if custom_user_agent in displayed_user_agent else "User-Agent не було змінено належним чином")
+    driver.get("https://uk.wikipedia.org/wiki/Україна")
+    input("Натисніть Enter для закриття браузера...")
+except Exception as e:
+    print(f"Виникла помилка: {e}")
+finally:
+    driver.quit()`}
+                  </pre>
+                </div>
+                <p className="mt-4 text-sm text-gray-500">
+                  Цей код дозволяє випадковим чином генерувати та встановлювати User-Agent у браузері Chrome за допомогою Selenium.
+                </p>
               </div>
             </div>
           </div>
